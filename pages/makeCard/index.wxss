@@ -1,0 +1,41 @@
+/* pages/makeCard/index.wxss */
+
+.canvas-warp {
+  height: 100%;
+  background: #fff;
+}
+.bottom-warp{
+  height: 100rpx;
+}
+
+.share-canvas {
+  width: 750rpx;
+  background: #fff;
+}
+
+.back-home-btn{
+  position: fixed;
+  width: 110rpx;
+  bottom: 40rpx;
+  left: 0rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #fbc955;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.save-btn{
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background: #1f82d2;
+  font-size: 30rpx;
+  color: #fff;
+}

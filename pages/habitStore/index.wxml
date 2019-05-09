@@ -1,0 +1,12 @@
+<!--pages/habitStore/index.wxml-->
+<view class='habit-list-warp'>
+    <view class='insist-count'>{{habitList.length}}个{{gender=='我'? '':'公开的'}}习惯已经归档<text wx:if="{{gender=='我'}}">(长按可恢复坚持)</text></view>
+    <view class="scroll-habit">
+      <view wx:for="{{habitList}}" wx:key='index' class="habit-store {{(index == habitList.length-1 && storeCount==0)? 'habit-item-right':''}}">
+        <view class='scroll-warp-text' catchtap='clickHabit' catchlongpress='pressHabit' data-id="{{item.id}}" data-days="{{item.check_today==null ? (item.check_times-1):item.check_times}}">
+          <view class='habit-name'>{{item.name}}</view>
+          <view class='habit-insist'>已坚持{{item.check_today==null ? (item.check_times-1):item.check_times}}天</view>
+        </view>
+      </view>
+    </view>
+  </view>

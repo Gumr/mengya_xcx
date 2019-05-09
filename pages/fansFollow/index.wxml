@@ -1,0 +1,17 @@
+<!--pages/FansFollow/index.wxml-->
+<view wx:if="{{!isEmpty}}">
+  <view class="fter-view-item" wx:for="{{userList}}" wx:key="id" bindtap='toUserPage' data-user="{{item.id}}">
+    <view class="fter-item-ans">
+      <view class='avatar-warp' bindtap='editUser'>
+        <image class="userinfo-avatar" src="{{item.avatar_small}}"></image>
+        <image class="userinfo-vip" wx:if="{{item.gender==1}}" src="/images/sex_1.png"></image>
+        <image class="userinfo-vip" wx:if="{{item.gender==0 || item.gender==2}}" src="/images/sex_0.png"></image>
+      </view>
+      <view class="fter-item-day">{{item.nickname}}</view>
+    </view>
+  </view>
+  <view class="loadmore">
+    <text>{{loadmore == -1? "到底啦~":(loadmore == 1? "":"正在加载...")}}</text>
+  </view>
+</view>
+<view wx:if='{{isEmpty}}' class='empty-warp'>暂无{{fanOrFollow==1? '关注':'粉丝'}}</view>

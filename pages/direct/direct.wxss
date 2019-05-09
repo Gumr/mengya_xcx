@@ -1,0 +1,12 @@
+/* pages/direct/direct.wxss */
+
+.about-warp {
+  text-align: center;
+  padding-top: 80rpx;
+  padding-bottom: 15rpx;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  color: #666;
+  background: #fff;
+  height: 100%;
+}

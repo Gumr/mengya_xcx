@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "login-view": "../../components/login_view"
+  },
+  "navigationBarTitleText": "搜索萌友"
+}

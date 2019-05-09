@@ -1,0 +1,57 @@
+/* pages/about/about.wxss */
+
+.about-warp {
+  font-size: 32rpx;
+  height: 90%;
+}
+
+.article-item{
+  position: relative;
+  background: #fff;
+  font-size: 33rpx;
+  padding: 30rpx 30rpx 20rpx 30rpx;
+  color: #333;
+  border-bottom: 1rpx solid #efeff4;
+}
+
+.about-btn{
+  text-align: center;
+  font-size: 28rpx;
+  color: #29a1f7;
+  width: 100%;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.recommend-title{
+  padding-left: 20rpx;
+  text-align: left;
+  font-size: 30rpx;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+  color: #666666;
+}
+
+.article-time{
+  font-size: 24rpx;
+  margin-top: 18rpx;
+  color: #adb2bb;
+}
+
+.list-scroll{
+  background: #fff;
+}
+
+.back-home-btn {
+  position: fixed;
+  width: 110rpx;
+  bottom: 40rpx;
+  left: 0rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #fbc955;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  font-size: 26rpx;
+  color: #fff;
+}

@@ -1,0 +1,86 @@
+/* pages/vip/index.wxss */
+.vip{
+    background-color: white;
+}
+.desc{
+    font-size: 30rpx;
+    /*text-indent: 2em;*/
+    color: #666666;
+    line-height: 1.8;
+    padding: 45rpx 30rpx;
+    box-sizing: border-box;
+    width: 750rpx;
+}
+.priority{
+    margin-top: 20rpx;
+    padding: 20rpx 0;
+}
+.priority .items{
+    padding: 15rpx;
+}
+.priority .title{
+    color: #000000;
+    font-size: 36rpx;
+    padding-left: 30rpx;
+    margin-top: 20rpx;
+    font-weight: bold;
+}
+
+.priority .item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 28rpx;
+    color: #999999;
+    padding: 20rpx 30rpx;
+}
+.priority .item image{
+    width: 80rpx;
+    height: 80rpx;
+    box-sizing: border-box;
+}
+.priority .private-img{
+    padding: 10rpx;
+}
+.priority .item>view{
+    padding-left: 50rpx;
+}
+
+.priority .item .sub-title{
+    color: #333333;
+    font-size: 36rpx;
+}
+
+.payment{
+    background: #29a1f7;
+    color: white;
+    font-size: 40rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 80rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.payment > view > button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #29a1f7;
+    color: white;
+    width: 750rpx;
+    height: 120rpx;
+    border-radius: 0;
+}
+
+.payment > view > button::after{
+  border: none;
+}
+
+.payment .is-vip{
+    width: 750rpx;
+    padding: 30rpx;
+    text-align: center;
+    box-sizing: border-box;
+}

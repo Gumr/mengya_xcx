@@ -1,0 +1,98 @@
+/* pages/share_invite/invite.wxss */
+
+.empty-warp {
+  display: flex;
+  width: 700rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25rpx;
+  height: 86%;
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  background: #fff;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #adb2bb;
+}
+
+.user-avater {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #1f82d2;
+  padding: 15rpx;
+  font-size: 30rpx;
+}
+
+.user-desc {
+  color: #666;
+  font-size: 30rpx;
+}
+
+.user-habit {
+  margin-top: 40rpx;
+  width: auto;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-top: 3rpx solid #1f82d2;
+  border-bottom: 3rpx solid #1f82d2;
+  color: #444;
+  font-size: 30rpx;
+}
+
+.empty-habit-desc {
+  color: #999;
+  font-size: 28rpx;
+  padding-top: 30rpx;
+  line-height: 45rpx;
+  padding-bottom: 35rpx;
+}
+
+.empty-warp > image {
+  margin: 50rpx auto 0rpx auto;
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.empty-add-warp {
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+}
+
+.empty-add-btn {
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  background: #1f82d2;
+  font-weight: bold;
+}
+
+.back-home-btn {
+  position: fixed;
+  width: 120rpx;
+  bottom: 150rpx;
+  left: 0rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #fbc955;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  font-size: 26rpx;
+  color: #fff;
+}

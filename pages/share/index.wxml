@@ -1,0 +1,66 @@
+<!--pages/share/index.wxml-->
+<view class='heart-note-warp' scroll-y="true" style="height: 100%;">
+  <view class="scroll-view-item" wx:for="{{feedList}}" wx:key="id" wx:for-index="idx">
+    <view class="item-ans">
+      <image src="{{item.avatar_small}}" bindtap='toUserPage' data-user="{{item.user_id}}"></image>
+      <view class="item-day">
+        <view catchtap='toUserPage' data-user="{{item.user_id}}">{{item.nickname==''? '萌友':item.nickname}}</view>
+        <view class='insist'>坚持
+          <text style='color:#1f82d2' catchtap='clickHabit' data-habitid='{{item.habit_id}}'>#{{item.habit_name}}#</text>
+        </view>
+      </view>
+      <view class="item-pv">
+        <view>{{item.add_time}}</view>
+        <view class='days'>{{item.days}}天</view>
+      </view>
+    </view>
+    <image wx:if='{{item.pic_url}}' class='item-pic' src="{{item.pic_url + '?x-oss-process=image/resize,w_750'}}" data-src="{{item.pic_url + '?x-oss-process=image/resize,w_1500'}}" mode='widthFix' bindtap="handleViewImage" />
+    <view wx:if="{{item.note != ''}}" class="item-title">
+      <text bindtap='copyNote' data-text='{{item.note}}'>{{item.note}}</text>
+    </view>
+
+    <view class='comment-list-warp'>
+      <view class='comment-item' wx:for="{{item.comment}}" wx:for-item="commentItem" wx:for-index="commentIdx" 
+      wx:key="commentItem.id" bindtap='clickReply' data-id="{{commentItem.id}}" 
+      data-user="{{commentItem.nickname}}" data-index='{{idx}}' data-userid='{{commentItem.user_id}}'>
+        <text catchtap='toUserPage' data-user="{{commentItem.user_id}}">{{commentItem.nickname}}</text>
+        <text wx:if='{{commentItem.atUserId}}' style='color: #666666'>回复</text>
+        <text wx:if='{{commentItem.atUserId}}' catchtap='toUserPage' data-user="{{commentItem.atUserId}}">{{commentItem.atUser}}</text>:{{commentItem.content}}
+      </view>
+    </view>
+
+    <input wx:if='{{item.isComment}}' focus='{{item.isComment}}' data-id="{{item.id}}" data-index='{{idx}}' class='comment-input' confirm-type='send' bindconfirm='sendComment' type='text' placeholder="{{atUserName}}" adjust-position='true' bindblur='hideComment'></input>
+
+    <view class='likes-warp' wx:if="{{item.likes.length>0}}">
+      <image src="/images/like_normal.png"></image>
+      <view>
+        <block wx:for="{{item.likes}}" wx:key="item.id" wx:for-item="likeItem" wx:for-index="idx">
+          <text class='like-name' catchtap='toUserPage' data-user="{{likeItem.id}}">{{likeItem.nickname}}</text>
+          <text wx:if="{{item.likes.length-1 > idx}}"> , </text>
+        </block>
+      </view>
+    </view>
+
+    <view class="item-time">
+      <view class='insist-like' bindtap='likeHabitNote' data-id="{{idx}}">
+        <image wx:if='{{item.isLike}}' src="/images/like_pressed.png"></image>
+        <image wx:else src="/images/like_normal.png"></image>{{item.prop_count}}</view>
+      <view class='insist-comment'>
+        <login-view bind:onLoginSuccess='clickComment' payload="{{item.habit_id}}" data-index='{{idx}}'>
+          <form report-submit="true" data-id='{{item.habit_id}}'>
+            <button class="commnent-btn" form-type="submit">
+              <image src="/images/comment_normal.png"></image>{{item.comment_count}}
+            </button>
+          </form>
+        </login-view>
+      </view>
+      <button class='insist-share' open-type="share" data-name="{{item.habit_name}}" data-id="{{item.id}}" data-day="{{item.days}}" data-path="{{item.pic_url + '?x-oss-process=image/resize,w_750,h_600'}}">
+        <image src="/images/ft_share.png"></image>
+      </button>
+    </view>
+    
+  </view>
+  <view wx:if="{{page!=0}}" class='back-home-btn' bindtap='backHome'>首页</view>
+  <view wx:if='{{isEmpty}}' class='note-empty'>还没有记录，
+    <br/>赶快打卡生成自己的记录吧</view>
+</view>

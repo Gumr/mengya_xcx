@@ -1,0 +1,248 @@
+/* pages/energy/energy.wxss */
+
+.energy-warp {
+  width: 100%;
+  height: 100%;
+}
+
+.energy-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.energy-tree {
+  width: 480rpx;
+  height: 480rpx;
+  margin-left: 135rpx;
+  margin-right: auto;
+  position: absolute;
+  bottom: 160rpx;
+}
+
+.energy-big-cloud {
+  width: 120rpx;
+  position: absolute;
+  top: 230rpx;
+}
+
+.tree-ways {
+  width: 80rpx;
+  position: absolute;
+  top: 470rpx;
+  right: 20rpx;
+}
+
+.tree-share-btn{
+  width: 80rpx;
+  position: absolute;
+  top: 600rpx;
+  right: 20rpx;
+  background: transparent;
+  border: none;
+  padding: 0rpx;
+}
+
+.tree-share-btn::after {
+  border: none;
+}
+
+.tree-more {
+  width: 80rpx;
+}
+
+.tree-home {
+  width: 80rpx;
+  position: absolute;
+  top: 730rpx;
+  right: 20rpx;
+}
+
+.tree-watering-warp{
+   width: 120rpx;
+  position: absolute;
+  top: 530rpx;
+  right: 180rpx;
+}
+
+.tree-watering {
+  width: 120rpx;
+}
+
+.energy-all {
+  top: 15rpx;
+  position: absolute;
+  right: 0rpx;
+  color: #fff;
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  padding-left: 30rpx;
+  padding-right: 15rpx;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.energy-day {
+  top: 90rpx;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  right: 0rpx;
+  color: #fff;
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  padding-left: 10rpx;
+  padding-right: 15rpx;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+}
+
+.user-avatar{
+  margin-top: 9rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: solid 1rpx #fff;
+  margin-right: 13rpx;
+}
+
+.tag {
+  top: 600rpx;
+  width: 320rpx;
+  height: 80rpx;
+  left: 120rpx;
+  border: 3rpx solid #6d5c31;
+  position: absolute;
+  border-radius: 40rpx;
+  background: #ffde17;
+  text-align: center;
+}
+
+.tag view:first-child {
+  display: block;
+  border-width: 8px;
+  position: absolute;
+  bottom: -33rpx;
+  left: 240rpx;
+  border-style: solid dashed dashed;
+  border-color: #6d5c31 transparent transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+.tag view:nth-child(2) {
+  display: block;
+  border-width: 8px;
+  position: absolute;
+  bottom: -15px;
+  left: 240rpx;
+  border-style: solid dashed dashed;
+  border-color: #ffde17 transparent transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+.tag-text {
+  display: block;
+  margin-top: 8rpx;
+  line-height: 30rpx;
+  font-size: 22rpx;
+  color: #6d5c31;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 35%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 8rpx;
+}
+
+.modal-title {
+  padding-top: 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 30rpx 32rpx;
+  font-size: 27rpx;
+  line-height: 38rpx;
+  color: #444;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #f2f2f2;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-confirm {
+  width: 100%;
+  color: #29a1f7;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.energy-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #f2f2f2;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.btn-share {
+  flex: 1;
+  color: #29a1f7;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.energye-btn {
+  color: #29a1f7;
+  font-size: 32rpx;
+  background: transparent;
+  border: none;
+}
+
+.energye-btn::after {
+  border: none;
+}

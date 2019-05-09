@@ -1,0 +1,44 @@
+<!--pages/energy/energy.wxml-->
+<view class='energy-warp'>
+  <image class='energy-bg' src='http://xiaeke.oss-cn-shanghai.aliyuncs.com/habit/tree/tree_bg.jpg'></image>
+  <view class='energy-all'>总能量<text>{{energy}}</text>g</view>
+  <view class='energy-day'><image class='user-avatar' src='{{userUrl}}' mode="widthFix"></image>成长{{checkNum}}天</view>
+  <image class='energy-big-cloud' animation="{{smallAni}}" src='../../images/cloud_big.png' mode="widthFix"></image>
+  <image class='energy-tree' src='{{treeUrl}}'></image>
+  <image class='tree-ways' src='../../images/tree_ways.png' mode="widthFix" bindtap='energyDesc'></image>
+  <button class='tree-share-btn' open-type="share">
+    <image class='tree-more' src='../../images/tree_share.png' mode="widthFix"></image>
+  </button>
+  <image wx:if='{{showHome==1}}' class='tree-home' src='../../images/tree_home.png' mode="widthFix" bindtap='backHome'></image>
+  <login-view animation="{{waterAni}}" class='tree-watering-warp' bind:onLoginSuccess='wateringFriend' wx:if='{{isShare==1}}'>
+    <image class='tree-watering' src='../../images/tree_watering.png' mode="widthFix"></image>
+  </login-view>
+
+  <view class="tag" animation="{{sayingAni}}">
+        <view></view><view></view>
+        <text class='tag-text'>{{sayText[sayingIndex]}}</text>
+  </view>
+</view>
+
+
+<view class="modal-mask" bindtap="hideEnergy" catchtouchmove="preventTouchMove" wx:if="{{showEnergy}}"></view>
+<view class="modal-dialog" wx:if="{{showEnergy}}">
+  <view class="modal-title">萌芽能量攻略</view>
+  <view class="modal-content">
+    <text>每天坚持，能量会一点一滴收集起来。
+
+  能量收集：
+          分享给好友，好友可以给你一个习惯加1g能量；
+          求群好友加能量，大家迅速支持你的能量成长。
+
+  能量使用：
+           <text style='color:red'>免费升级高级账号（达到180g）
+          补打卡-5g
+          更多有意思的用途-请期待</text>
+  </text>
+  </view>
+  <view class="energy-footer">
+    <view class="btn-cancel" bindtap="hideEnergy">取消</view>
+    <view class="btn-share"><button class='energye-btn' open-type="share">求加能量</button></view>
+  </view>
+</view>

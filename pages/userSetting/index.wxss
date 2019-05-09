@@ -1,0 +1,65 @@
+/* pages/userSetting/index.wxss */
+
+.edit-warp {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+
+.info-warp {
+  font-size: 18rpx;
+  color: #666;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.info-warp > input {
+  background-color: #fff;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #333;
+  padding-left: 25rpx;
+  border-radius: 8rpx;
+}
+
+.edit-ok {
+  border-radius: 8rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #29a1f7;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.quit-back{
+  margin-top: 50rpx;
+  border-radius: 8rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #29a1f7;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.msg-set{
+  color: #333;
+  padding-left: 25rpx;
+  border-radius: 8rpx;
+  margin-top: 30rpx;
+  padding-right: 15rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.msg-set > view{
+  flex: 1;
+}

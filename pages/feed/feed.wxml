@@ -1,0 +1,79 @@
+<!--pages/feed/feed.wxml-->
+<view class='heart-note-warp' scroll-y="true" style="height: 100%;">
+
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">热门</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}">
+      <login-view bind:onLoginSuccess='swichNav'  data-current="1">关注</login-view>
+    </view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">最新</view>
+
+    <button class='heart-share-btn' open-type="share">推荐</button>
+  </view>
+
+  <view class='search-user-bg' wx:if='{{currentTab==1}}' catchtap='toSearchUser'>
+    <view class='search-user-warp'>
+      <image src="../../images/search_icon.png"></image>
+      <text>输入昵称搜索小伙伴</text>
+    </view>
+  </view>
+  
+
+  <view class="scroll-view-item" wx:for="{{feedList}}" wx:for-index="idx" wx:key="id">
+    <view class="item-ans">
+      <image src="{{item.avatar_small}}" bindtap='toUserPage' data-user="{{item.user_id}}"></image>
+      <view class="item-day">
+        <view bindtap='toUserPage' data-user="{{item.user_id}}">{{item.nickname==''? '萌友':item.nickname}}</view>
+        <view class='insist'>坚持
+          <text style='color:#1f82d2' catchtap='clickHabit' data-habitid='{{item.habit_id}}'>#{{item.habit_name}}#</text>
+        </view>
+      </view>
+      <view class="item-pv">
+        <view>{{item.add_time}}</view>
+        <view class='days'>{{item.days}}天</view>
+      </view>
+    </view>
+    <image wx:if='{{item.pic_url}}' class='item-pic' src="{{item.pic_url + '?x-oss-process=image/resize,m_fill,h_600,w_750'}}" data-src="{{item.pic_url + '?x-oss-process=image/resize,w_1500'}}" mode='widthFix' bindtap="handleViewImage" />
+    <view wx:if="{{item.note != ''}}" class="item-title">
+      <text>{{item.note}}</text>
+    </view>
+    <view class='comment-list-warp'>
+      <view class='comment-item' wx:for="{{item.comment}}" wx:for-item="commentItem" 
+      wx:for-index="commentIdx" wx:key="commentItem.id" bindtap='clickReply' data-id="{{commentItem.id}}" 
+      data-user="{{commentItem.nickname}}"  data-index='{{idx}}' data-userid='{{commentItem.user_id}}'>
+        <text catchtap='toUserPage' data-user="{{commentItem.user_id}}">{{commentItem.nickname}}</text>
+        <text wx:if='{{commentItem.atUserId}}' style='color: #666666'>回复</text>
+        <text wx:if='{{commentItem.atUserId}}' catchtap='toUserPage' data-user="{{commentItem.atUserId}}">{{commentItem.atUser}}</text>:{{commentItem.content}}
+      </view>
+    </view>
+
+    <input wx:if='{{item.isComment}}' focus='{{item.isComment}}' data-id="{{item.id}}" data-index='{{idx}}'
+    class='comment-input' confirm-type='send' bindconfirm='sendComment' type='text' 
+    placeholder="{{atUserName}}" adjust-position='true' bindblur='hideComment' cursor-spacing='20'></input>
+
+    <view class="item-time">
+      <view class='insist-like' bindtap='likeHabitNote' data-id="{{idx}}">
+        <image wx:if='{{item.isLike}}' src="/images/like_pressed.png"></image>
+        <image wx:else src="/images/like_normal.png"></image>{{item.prop_count}}</view>
+      <view class='insist-comment'>
+        <login-view bind:onLoginSuccess='clickComment' payload="{{item.habit_id}}" data-index='{{idx}}'>
+          <form report-submit="true" data-id='{{item.habit_id}}'>
+            <button class="commnent-btn" form-type="submit">
+              <image src="/images/comment_normal.png"></image>{{item.comment_count}}
+            </button>
+          </form>
+        </login-view>
+      </view>
+      <button class='insist-share' open-type="share" data-name="{{item.habit_name}}" data-id="{{item.id}}" data-day="{{item.days}}" data-path="{{item.pic_url + '?x-oss-process=image/resize,w_750,h_600'}}">
+        <image src="/images/ft_share.png"></image></button>
+    </view>
+  </view>
+  <view class="loadmore" wx:if="{{!isEmpty}}">
+    <text>{{loadmore == -1? "到底了~":(loadmore == 1? "正在加载...":"上拉加载")}}</text>
+  </view>
+
+  <view wx:if='{{isEmpty}}' class='note-empty'>
+    <text>你关注的伙伴还没有发布动态哦
+    <br/>去中学堂关注更多伙伴吧</text>
+  </view>
+</view>

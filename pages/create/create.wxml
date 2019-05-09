@@ -1,0 +1,71 @@
+<!--pages/create/create.wxml-->
+<view class='create-warp'>
+  <view class='swiper-warp'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" 
+    duration="{{duration}}" indicator-active-color="#29a1f7" current="{{current==-1? 0:current}}" 
+    class='banner-swiper' bindchange="changeSwiper">
+      <block wx:for="{{banners}}" wx:key="unique">
+        <swiper-item>
+          <view class="banner-warp">
+            <image src='{{item.pic_url}}' catchtap='clickBanner' data-index='{{index}}'></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{banners}}" wx:key="unique">
+        <view class="dot{{index == current ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+
+
+  <view class='header-add-warp'>
+    <view class='header-text'>搜索或自定义习惯</view>
+    <view class='add-habit-warp'>
+      <login-view class='login-habit-warp' bind:onLoginSuccess='goSearchHabitPage'>
+        <view class="header">
+          <image class="plus" src="../../images/empty_push_my.png" />
+          <view class='create-right'>个人习惯</view>
+        </view>
+      </login-view>
+      <login-view class='login-habit-warp' bind:onLoginSuccess='goGroupHabitPage' wx:if="{{showGroup}}">
+        <view class="header-ft">
+          <image class="plus" src="../../images/empty_push_ft.png" />
+          <view class='create-right'>打卡圈子</view>
+        </view>
+      </login-view>
+    </view>
+  </view>
+
+  <view class='recommend-warp-header'>
+    <image class="recommend-icon" src="/images/recommend_icon.png"></image>
+    <view class='recommend-note'>推荐习惯</view>
+    <button class='share-btn' open-type="share">
+      <view class='share-text'>分享</view>
+    </button>
+  </view>
+
+  <view class='search'>
+    <view wx:for='{{list}}' wx:key='{{item.id}}' class="search-children {{item.id == searchId? 'light':''}}" data-id='{{item.id}}' bindtap='changeSearchHabit'>{{item.name}}</view>
+  </view>
+
+  <view class='recommend-warp'>
+    <view class="scroll-view-item" wx:for="{{recommendList}}" wx:key="id">
+      <view class="item-day">
+        <image class="item-icon" src="{{item.icon_url}}" bindtap='clickHabit' data-habitid='{{item.habit_id}}' />
+        <view class='item-habit' bindtap='clickHabit' data-habitid='{{item.habit_id}}'>
+          <view>{{item.name}}</view>
+          <view>已有{{item.members}}位萌友在坚持</view>
+        </view>
+        <login-view bind:onLoginSuccess='clickJoin' payload="{{item.name}}" data-type='{{item.habit_type}}' data-habitid='{{item.habit_id}}'>
+          <form report-submit="true" bindsubmit="submitJoin" data-id='{{item.habit_id}}'>
+            <button class="join-btn" form-type="submit">
+              <view class='join-habit'>加入</view>
+            </button>
+          </form>
+        </login-view>
+      </view>
+    </view>
+  </view>
+</view>

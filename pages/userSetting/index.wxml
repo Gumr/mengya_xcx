@@ -1,0 +1,15 @@
+<!--pages/userSetting/index.wxml-->
+<view class="edit-warp">
+  <view class="info-warp">
+    <input placeholder="" maxlength="30" bindinput="nicknameInput" value='{{userInfo.nickname}}' />
+  </view>
+  <view class="info-warp">
+    <input placeholder="" maxlength="30" bindinput="signatureInput" value='{{userInfo.signature}}' />
+  </view>
+
+  <view class="edit-ok" bindtap="onChangUser">确认修改</view>
+
+  <view class='msg-set'><view>通知设置</view><switch checked='{{isCanMsg}}' bindchange="canMsgChange" color="#29a1f7"/></view>
+
+  <view class='quit-back' bindtap='quitReLogin'>更换头像</view>
+</view>

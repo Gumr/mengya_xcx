@@ -1,0 +1,17 @@
+<!--send.wxml-->
+<view class="send-warp">
+
+  <view class='add-ft'><text>加入萌友群，反馈问题、意见
+  和萌友一起遇见更好的自己</text></view>
+  <image class="support-image" src="http://xiaeke.oss-cn-shanghai.aliyuncs.com/habit/qun/mengyaqun02.jpg" bindtap="previewImage" mode='widthFix'></image>
+
+  <button class='share-btn' open-type="contact" session-from="megnya">
+    <view class="account-item">客服反馈</view>
+    <image class="account-arrow" src="/images/arrow.png"></image>
+  </button>
+
+  <official-account  binderror="officialError" bindload="officialOk" class='official'></official-account>
+
+  <view class='tip-text'>管理习惯提示：左滑习惯条目=>管理=>修改图标/删除/排序</view>
+  <view class='help-text' bindtap='clickHelp'>使用帮助</view>
+</view>

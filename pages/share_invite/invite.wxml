@@ -1,0 +1,23 @@
+<!--pages/share_invite/invite.wxml-->
+<view class='empty-warp'>
+  <view class='empty-no-add'>
+    <image class='user-avater' src="{{inviteInfo.avatar_small}}"></image>
+    <view class='user-name'>{{inviteInfo.nickname}}</view>
+    <view class='user-desc'>邀请你一起进行</view>
+    <view class='user-habit'>「 {{inviteInfo.name}} 」打卡</view>
+  </view>
+  <image src="/images/habit_empty.png"></image>
+  <view class='empty-habit-desc'>
+    <text>
+      培养你的好习惯
+      遇见更好的自己
+      从萌芽习惯轻松开始
+      </text>
+  </view>
+</view>
+<view class='back-home-btn' bindtap='backHome'>去首页</view>
+<view class='empty-add-warp'>
+  <login-view bind:onLoginSuccess='createHabit'>
+    <view class='empty-add-btn'>立即一起努力</view>
+  </login-view>
+</view>

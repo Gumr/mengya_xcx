@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "能量树",
+  "navigationBarBackgroundColor": "#82d6fa",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "login-view": "../../components/login_view"
+  }
+}

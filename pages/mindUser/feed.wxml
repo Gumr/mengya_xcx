@@ -1,0 +1,86 @@
+<!--pages/mindUser/feed.wxml-->
+<view class='heart-note-warp' scroll-y="true" style="height: 100%;">
+  <view class='habit-note-header'>
+    <image class="habit-icon" src="{{habitData.icon_url}}"></image>
+    <view class='habit-note'>
+      <view>{{habitData.name}}</view>
+      <view class='habit-members'>已经坚持{{days}}天</view>
+    </view>
+    <image wx:if='{{showType==1}}' src='/images/feed_two_normal.png' class='select-type-btn' bindtap='changeType' data-index='2'></image>
+    <image wx:if='{{showType==2}}' src='/images/feed_two_select.png' class='select-type-btn'></image>
+    <image wx:if='{{showType==2}}' src='/images/feed_one_normal.png' class='select-type-btn' bindtap='changeType' data-index='1'></image>
+    <image wx:if='{{showType==1}}' src='/images/feed_one_select.png' class='select-type-btn'></image>
+  </view>
+
+  <view wx:if='{{showType==2}}' class='feed-two-warp'>
+    <view wx:for="{{dayList}}" wx:for-index="idx" wx:key="id" class='feed-two-content' bindtap='toDetail' data-id="{{item.id}}">
+      <view class='feed-two-day'>
+        <view class='feed-insist'>第<text>{{item.days}}</text>天</view>
+        <view class='feed-month-day'>{{item.month}}/{{item.day}}</view>
+        <view class='feed-time'>{{item.time}}</view>
+      </view>
+      <view class='feed-two-note'>
+        <text>{{item.note}}</text>
+      </view>
+      <image class='feed-two-img' wx:if='{{item.pic_url}}' src="{{item.pic_url + '?x-oss-process=image/resize,m_fill,h_130,w_130'}}"></image>
+    </view>
+  </view>
+
+  <view wx:if='{{showType==1}}' class="scroll-view-item" wx:for="{{feedList}}" wx:for-index="idx" wx:key="id">
+    <view class="item-ans">
+      <image src="{{item.avatar_small}}" bindtap='toUserPage' data-user="{{item.user_id}}"></image>
+      <view class="item-day">
+        <view bindtap='toUserPage' data-user="{{item.user_id}}">{{item.nickname==''? '萌友':item.nickname}}</view>
+        <view class='insist'>坚持<text style='color:#1f82d2' catchtap='clickHabit' data-habitid='{{item.habit_id}}'>#{{item.habit_name}}#</text>
+        </view>
+      </view>
+      <view class="item-pv">
+        <view>{{item.add_time}}</view>
+        <view class='days'>{{item.days}}天</view>
+      </view>
+    </view>
+    <image wx:if='{{item.pic_url}}' class='item-pic' src="{{item.pic_url + '?x-oss-process=image/resize,m_fill,h_600,w_750'}}" data-src="{{item.pic_url + '?x-oss-process=image/resize,w_1500'}}" mode='widthFix' bindtap="handleViewImage" />
+    <view wx:if="{{item.note != ''}}" class="item-title">
+      <text bindtap='copyNote' data-text='{{item.note}}'>{{item.note}}</text>
+    </view>
+
+    <view class='comment-list-warp'>
+      <view class='comment-item' wx:for="{{item.comment}}" wx:for-item="commentItem" wx:for-index="commentIdx" 
+      wx:key="commentItem.id" bindtap='clickReply' data-id="{{commentItem.id}}" 
+      data-user="{{commentItem.nickname}}" data-index='{{idx}}' data-userid='{{commentItem.user_id}}'>
+        <text catchtap='toUserPage' data-user="{{commentItem.user_id}}">{{commentItem.nickname}}</text>
+        <text wx:if='{{commentItem.atUserId}}' style='color: #666666'>回复</text>
+        <text wx:if='{{commentItem.atUserId}}' catchtap='toUserPage' data-user="{{commentItem.atUserId}}">{{commentItem.atUser}}</text>:{{commentItem.content}}
+      </view>
+    </view>
+    <input wx:if='{{item.isComment}}' focus='{{item.isComment}}' data-id="{{item.id}}" data-index='{{idx}}' class='comment-input' confirm-type='send' bindconfirm='sendComment' type='text' placeholder="{{atUserName}}" adjust-position='true' bindblur='hideComment'
+      cursor-spacing='20'></input>
+
+    <view class="item-time">
+      <view class='insist-like' bindtap='likeHabitNote' data-id="{{idx}}">
+        <image wx:if='{{item.isLike}}' src="/images/like_pressed.png"></image>
+        <image wx:else src="/images/like_normal.png"></image>{{item.prop_count}}</view>
+      <view class='insist-comment'>
+        <login-view bind:onLoginSuccess='clickComment' payload="{{item.habit_id}}" data-index='{{idx}}'>
+          <form report-submit="true" data-id='{{item.habit_id}}'>
+            <button class="commnent-btn" form-type="submit">
+              <image src="/images/comment_normal.png"></image>{{item.comment_count}}
+            </button>
+          </form>
+        </login-view>
+      </view>
+      <button class='insist-share' open-type="share" data-name="{{item.habit_name}}" data-id="{{item.id}}" data-day="{{item.days}}" data-path="{{item.pic_url + '?x-oss-process=image/resize,w_750,h_600'}}">
+        <image src="/images/ft_share.png"></image>
+      </button>
+    </view>
+  </view>
+
+  <view class="loadmore">
+    <text>{{loadmore == -1? "遇见更好的自己·从这里开始~":(loadmore == 1? "":"正在加载...")}}</text>
+  </view>
+
+  <view wx:if='{{isEmpty}}' class='note-empty'>
+    <text>加入并发布记录吧
+    <br/>遇见更好的自己，努力成长</text>
+  </view>
+</view>

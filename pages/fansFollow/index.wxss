@@ -1,0 +1,89 @@
+/* pages/FansFollow/index.wxss */
+
+.fter-view-item {
+  background-color: #fff;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.fter-item-ans {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar-warp {
+  position: relative;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.userinfo-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.userinfo-vip {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  bottom: -2rpx;
+  right: -2rpx;
+  border-radius: 50%;
+  border: 1rpx solid #eee;
+  background: #fff;
+}
+
+
+.fter-item-day {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 25rpx;
+  flex: 1;
+  color: #666;
+  font-size: 32rpx;
+}
+
+
+.remind-remove {
+  margin-top: 10rpx;
+  margin-right: 15rpx;
+  border: none;
+  padding: 0rpx;
+  height: 58rpx;
+  text-align: center;
+  line-height: 58rpx;
+  background: #fbc955;
+  border-radius: 29rpx;
+  font-size: 26rpx;
+  color: #fff;
+  width: 120rpx;
+}
+
+.remind-remove::after {
+  border: none;
+}
+
+.loadmore {
+  width: 100%;
+  height: 64rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.loadmore > text {
+  font-size: 23rpx;
+  color: #a2a2a2;
+}
+
+.empty-warp{
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+  padding-top: 200rpx;
+}

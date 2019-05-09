@@ -1,0 +1,68 @@
+/* pages/send/send.wxss */
+
+.send-warp {
+  width: 100%;
+  min-height: 100%;
+  background-color: #fff;
+}
+
+.title-warp {
+  padding: 40rpx 44rpx 30rpx 44rpx;
+  background-color: #fff;
+}
+
+.title-warp > textarea {
+  width: 100%;
+  font-size: 32rpx;
+  color: #333;
+  text-align: start;
+  min-height: 320rpx;
+  max-height: 700rpx;
+}
+
+.content-wripper {
+  position: relative;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  border-radius: 10rpx;
+  min-height: 240rpx;
+  background-color: #fff;
+  text-align: center;
+}
+
+.content-wripper-border{
+border: 1px dashed #29a1f7;
+}
+
+.send-icon{
+  height: 80rpx;
+  width: 80rpx;
+  margin-top: 80rpx;
+  opacity: 0.4;
+}
+
+.send-image{
+  width: 100%;
+}
+
+.send-btn {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #29a1f7;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.send-desc{
+  text-align: right;
+  margin-top: 20rpx;
+  color: #ccc;
+  padding-right: 50rpx;
+  font-size: 24rpx;
+  padding-bottom: 170rpx;
+}

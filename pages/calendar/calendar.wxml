@@ -1,0 +1,47 @@
+<!--pages/calendar/calendar.wxml-->
+<view class='calendar-bg'>
+  <view class="flex box box-tb box-align-center">
+    <view class="calendar box box-tb">
+      <view class="top-handle fs32 box box-lr box-align-center box-pack-center color-444">
+        <view class="prev box box-rl" bindtap="handleCalendar" data-handle="prev">
+          <view class="prev-handle box box-lr box-align-center box-pack-center">《</view>
+        </view>
+        <view class="date-area box box-lr box-align-center box-pack-center">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+        <view class="next box box-lr" bindtap="handleCalendar" data-handle="next">
+          <view class="next-handle box box-lr box-align-center box-pack-center">》</view>
+        </view>
+      </view>
+      <view class="weeks box box-lr box-pack-center box-align-center color-333">
+        <view class="week" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+      </view>
+      <view class="days box box-lr box-wrap">
+        <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+        </view>
+        <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}">
+          <view class="day {{item.choosed ? 'border-radius pink-bg' : ''}} box box-align-center box-pack-center">{{item.day}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='statistics-title'>数据统计</view>
+<view class='statistics-item'>
+  <view class='s-dot0'></view>
+  <view class='s-desc'>开始坚持天数</view>
+  <view class='s-count0'>{{startNum}}</view>
+  <view class='s-day'>天</view>
+</view>
+<view class='statistics-item'>
+  <view class='s-dot1'></view>
+  <view class='s-desc'>总坚持天数</view>
+  <view class='s-count1'>{{checkNum}}</view>
+  <view class='s-day'>天</view>
+</view>
+<view class='statistics-item'>
+  <view class='s-dot2'></view>
+  <view class='s-desc'>连续坚持天数</view>
+  <view class='s-count2'>{{continueCount}}</view>
+  <view class='s-day'>天</view>
+</view>
+

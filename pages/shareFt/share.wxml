@@ -1,0 +1,4 @@
+<!--pages/shareFt/share.wxml-->
+<canvas canvas-id="shareCanvas"  class="share-canvas"></canvas> 
+<view class='share-save-btn' bindtap='saveCard'>保存图片</view>
+<view class='share-desc'>保存到相册，分享给朋友，也可以直接放到公众号文章中</view>

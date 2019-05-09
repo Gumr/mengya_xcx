@@ -1,0 +1,162 @@
+/* pages/create/searchHabit/search.wxss */
+
+.create-warp {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.header {
+  display: flex;
+  width: auto;
+  background: #fff;
+  align-items: center;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 3rpx 5rpx #e7e7e7;
+  margin-bottom: 50rpx;
+  padding: 20rpx;
+  color: #444;
+}
+
+.header .plus {
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 20rpx;
+}
+
+.header .new-create {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.add-content {
+  display: flex;
+  width: auto;
+  background: #fff;
+  align-items: center;
+  border-radius: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  color: #666;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.add-content .create-desc {
+  flex: 1;
+}
+
+.add-content .create-btn {
+  text-align: center;
+  line-height: 66rpx;
+  font-size: 25rpx;
+  margin-left: 30rpx;
+  color: #fff;
+  background: #fbc955;
+  width: 120rpx;
+  height: 66rpx;
+  border-radius: 10rpx;
+}
+
+
+.scroll-view-item {
+  background-color: #fff;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.item-day {
+  display: flex;
+}
+
+.item-day .item-habit {
+  flex: 1;
+  line-height: 50rpx;
+  color: #333;
+  font-size: 32rpx;
+}
+
+.item-habit > view:last-child {
+  color: #adb2bb;
+  font-size: 26rpx;
+}
+
+.item-pv {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #c2c2c2;
+  font-size: 32rpx;
+}
+
+.share-btn {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  height: 58rpx;
+  background: transparent;
+  border: none;
+  margin-right: 30rpx;
+  padding: 0rpx;
+}
+
+.share-btn::after {
+  border: none;
+  flex: 1;
+}
+
+.share-btn .share-image {
+  margin: 0rpx;
+  display: block;
+}
+
+.share-btn .share-text {
+  height: 58rpx;
+  text-align: center;
+  line-height: 58rpx;
+  background: #fbc955;
+  border-radius: 29rpx;
+  font-size: 28rpx;
+  color: #fff;
+  width: 120rpx;
+}
+
+.item-day .item-icon {
+  margin-top: 8rpx;
+  width: 84rpx;
+  height: 84rpx;
+  margin-right: 30rpx;
+  border-radius: 50%;
+}
+
+.join-btn {
+  margin-top: 30rpx;
+  height: 58rpx;
+  text-align: center;
+  line-height: 58rpx;
+  background: #fbc955;
+  border-radius: 29rpx;
+  font-size: 28rpx;
+  color: #fff;
+  min-width: 120rpx;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+}
+
+.join-btn::after {
+  border: none;
+}
+
+.recommend-title{
+  text-align: left;
+  font-size: 28rpx;
+  padding-top: 25rpx;
+  padding-bottom: 20rpx;
+  padding-left: 2rpx;
+  color: #666666;
+}

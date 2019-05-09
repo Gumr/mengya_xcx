@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "login-view": "../../components/login_view"
+  },
+  "navigationBarTitleText": "自定义个人习惯"
+}

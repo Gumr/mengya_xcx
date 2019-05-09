@@ -1,0 +1,17 @@
+<!--pages/vip_features/index.wxml-->
+<view class="features" >
+    <view>
+        <view>安全云储存</view>
+        <view class="tips-on">已生效</view>
+    </view>
+    <view>
+        <view>习惯个数无限制</view>
+        <view class="tips-on">已生效</view>
+    </view>
+
+    <view>
+        <view>隐私密码锁</view>
+        <switch bindchange="switchPrivate" checked="{{hasSetPrivate}}"/>
+    </view>
+</view>
+

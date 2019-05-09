@@ -1,0 +1,163 @@
+/* pages/changeIcon/change.wxss */
+.content-warp {
+  background: #eee;
+  position: relative;
+  padding: 20rpx;
+}
+
+.change-tip{
+  line-height: 60rpx;
+  color: #666;
+  font-size: 28rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+}
+
+.habit-header {
+  background: #fff;
+  width: 100%;
+  text-align: center;
+  flex-direction: row;
+  display: flex;
+  margin-bottom: 20rpx;
+  border-radius: 7rpx;
+  font-size: 32rpx;
+  height: 138rpx;
+  color: #444;
+}
+
+.habit-header .habit-icon {
+  margin-top: 28rpx;
+  width: 84rpx;
+  height: 84rpx;
+  margin-left: 30rpx;
+}
+
+.habit-header .habit-note {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 28rpx;
+  padding-left: 30rpx;
+  padding-right: 20rpx;
+}
+
+.habit-members{
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  color: #adb2bb;
+}
+
+.habit-change-btn {
+  width: 178rpx;
+  margin-right: 30rpx;
+  margin-top: 34rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #fbc955;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #fff;
+  border: none;
+}
+
+.habit-change-btn:after {
+  border: 0;
+}
+
+
+.list-scroll{
+  height: 830rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.icon-list-warp{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+
+.icon-view{
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+  width: 84rpx;
+  height: 84rpx;
+  margin-left: 30rpx;
+}
+
+.icon-view > image{
+  width: 84rpx;
+  height: 84rpx;
+}
+
+.more-warp{
+  width: 100%;
+  padding-top: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.icon-more{
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  color: #666;
+  width: 250rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  /* background: #eee; */
+}
+
+.connect-btn{
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #29a1f7;
+}
+
+
+.option-warp {
+  z-index: 200rpx;
+  position: fixed;
+  bottom: 25rpx;
+  right: 28rpx;
+}
+
+.option-warp .record-card-btn {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 55rpx;
+  border: 1rpx solid #eee;
+  box-shadow: 0 2px 8px 0 rgba(109, 26, 26, 0.12);
+  color: #999;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.option-warp .record-card-btn::after{
+  border: none
+}
+
+.share-icon {
+  width: 30rpx;
+  height: 30rpx;
+}

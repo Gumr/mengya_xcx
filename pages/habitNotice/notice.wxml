@@ -1,0 +1,8 @@
+<!--pages/habitNotice/notice.wxml-->
+<view class="edit-warp">
+  <view class="info-warp">
+    <textarea placeholder="这里写圈子的公告~" maxlength="250" bindinput="noticeInput" value='{{notice}}' />
+  </view>
+
+  <view class="edit-ok" bindtap="onChangeNotice">发布公告</view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/createFt/create.wxml-->
+<view class='create-warp'>
+  <view class='create-title'>圈子名称</view>
+  <input class="new-create" bindinput="bindTitleInput" placeholder="例如：背单词打卡（50字以内）" maxlength='50' />
+  <view class='create-title'>圈子公告</view>
+  <textarea class="new-rule" bindinput="bindRuleInput" placeholder="例如：请大家发布与圈子主题相关的内容，公告只有创建圈子的圈主可以修改。" maxlength='250'></textarea>
+  <view class='create-title'>圈子规则</view>
+  <view class='desc-warp'>
+    <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+    <text class='create-desc'>你们专属的打卡圈子，其他成员邀请才能进入</text>
+  </view>
+  <view class='desc-warp'>
+    <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+    <text class='create-desc'>成员超过20人，圈主免费升级高级账户</text>
+  </view>
+  <view class='desc-warp'>
+    <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+    <text class='create-desc'>免费获得公众号直达圈子服务（你有公众号）</text>
+  </view>
+  <view class='desc-warp'>
+    <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+    <text class='create-desc'>免费定制圈子精美图标（联系客服）</text>
+  </view>
+  <view class='desc-warp'>
+    <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+    <text class='create-desc'>设置是否允许7天内补卡</text>
+    <switch class='repair-checked' checked='{{isRepair}}' bindchange="repairChange" color="#1f82d2" />
+  </view>
+  <login-view bind:onLoginSuccess='createGroupHabit'>
+    <view class='create-btn'>确认创建</view>
+  </login-view>
+</view>
+
+<view wx:if="{{needHome}}" class='back-home-btn' bindtap='backHome'>首页</view>
+
+<text class='direct-web' bindtap='toDirect'>公众号直达圈子服务</text>

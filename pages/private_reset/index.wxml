@@ -1,0 +1,24 @@
+<!--pages/private_setting/index.wxml-->
+<view class="container">
+    <image src="../../images/lock.png"/>
+    <view class="desc">
+        <view class="title">找回密码</view>
+        <view class="warning">
+            <view wx:if="{{!codeHasSend}}">
+                <view>您的密保邮箱为：</view>
+                <view>{{email}}</view>
+                <view>请点击获取邮箱验证码</view>
+
+            </view>
+            <view wx:else>验证码已发送至：{{email}}，请注意查收</view>
+        </view>
+    </view>
+    <view class="email" wx:if="{{!codeHasSend}}">
+        <!--<input type="text" focus="{{true}}" value="{{email}}" bindinput="handleInputEmail" placeholder="密保邮箱"/>-->
+        <button bindtap="handleFetchCode" >获取邮箱验证码</button>
+    </view>
+    <view class="email code" wx:else>
+        <input type="text" focus="{{true}}" value="{{code}}" bindinput="handleInputCode" placeholder="验证码"/>
+        <button bindtap="handleVerifyCode" disabled="{{code.length<4}}" >确定</button>
+    </view>
+</view>

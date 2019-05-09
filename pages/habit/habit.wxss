@@ -1,0 +1,282 @@
+/* pages/habit/habit.wxss */
+
+.empty-warp {
+  display: flex;
+  width: 700rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25rpx;
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  background: #fff;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #adb2bb;
+}
+
+.empty-no-add {
+  color: #777;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding-top: 45rpx;
+}
+
+.empty-habit-desc {
+  color: #999;
+  font-size: 28rpx;
+  padding-top: 10rpx;
+  line-height: 45rpx;
+  padding-bottom: 40rpx;
+}
+
+.empty-warp > image {
+  margin: 40rpx auto 0rpx auto;
+  width: 350rpx;
+  height: 350rpx;
+}
+
+.empty-add-btn {
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 25rpx;
+  background: #649dff;
+  border-radius: 8rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50rpx;
+}
+
+.empty-learn{
+  margin-top: 20rpx;
+   font-size: 25rpx;
+   padding: 25rpx;
+   color: #ff5a5a;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.habit-warp {
+  padding: 20rpx 20rpx 4rpx 20rpx;
+  min-height: 100%;
+  display: block;
+  position: relative;
+}
+
+.habit-item {
+  position: relative;
+  background: #fff;
+  border-radius: 7rpx;
+  font-size: 32rpx;
+  margin-bottom: 16rpx;
+  height: 138rpx;
+  color: #444;
+  overflow: hidden;
+}
+
+.inner {
+  position: absolute;
+  top: 0;
+}
+
+.inner.txt {
+  background-color: #fff;
+  width: 100%;
+  z-index: 5;
+  height: 140rpx;
+  transition: left 0.2s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: row;
+}
+
+.inner.del {
+  background-color: #e64340;
+  width: 160rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  text-align: center;
+  z-index: 6;
+  right: -160rpx;
+  color: #fff;
+}
+
+.item-ans {
+  flex: 1;
+  margin-top: 28rpx;
+  padding-left: 30rpx;
+  padding-right: 20rpx;
+}
+
+.item-text > view:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inner .item-icon {
+  margin-top: 28rpx;
+  width: 84rpx;
+  height: 84rpx;
+  margin-left: 30rpx;
+}
+
+.item-ans .item-text {
+  flex: 1;
+}
+
+.habit-item .item-days {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  color: #adb2bb;
+  display: flex;
+  flex-direction: row;
+}
+
+.item-days >view {
+  padding-right: 50rpx;
+}
+
+.item-days text {
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+  color: #adb2bb;
+}
+
+.create-warp {
+  position: fixed;
+  bottom: 40rpx;
+  right: 30rpx;
+  width: 110rpx;
+  height: 110rpx;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 100;
+  box-shadow: 0px 2px 2px 1px rgba(68, 68, 68, 0.2);
+}
+
+.create-warp > image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.is-check {
+  width: 44rpx;
+  height: 44rpx;
+  margin-top: 48rpx;
+  margin-right: 30rpx;
+}
+
+.is-ft{
+  position: absolute;
+  width: 37rpx;
+  height: 37rpx;
+  right: 5rpx;
+  top: 3rpx;
+}
+
+
+.header-add-warp {
+  width: 700rpx;
+  margin-top: 20rpx;
+  background: #fff;
+  padding-top: 16rpx;
+  padding-bottom: 20rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20rpx;
+  border-radius: 8rpx;
+}
+
+.header-text {
+  padding-left: 20rpx;
+  color: #666;
+  font-size: 28rpx;
+  padding-bottom: 15rpx;
+}
+
+.add-habit-warp {
+  display: flex;
+  flex-direction: row;
+}
+
+.login-habit-warp {
+  flex: 1;
+}
+
+.header-ft {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  background: #fff;
+  align-items: center;
+  border-radius: 8rpx;
+  padding-left: 20rpx;
+  padding-right: 25rpx;
+  padding-top: 18rpx;
+  padding-bottom: 20rpx;
+  color: #ffa000;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background-color:#ffda9f;
+}
+
+.header-ft .create-left {
+  flex: 1;
+  text-align: right;
+}
+
+.header-ft .create-right {
+  flex: 1;
+  text-align: left;
+}
+
+.header-ft .plus {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  background: #fff;
+  align-items: center;
+  border-radius: 8rpx;
+  padding-left: 20rpx;
+  padding-right: 25rpx;
+  padding-top: 18rpx;
+  padding-bottom: 20rpx;
+  color: #1f82d2;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  background-color: #cae1ef;
+}
+
+.header .plus {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.header .create-left {
+  flex: 1;
+  text-align: right;
+}
+
+.header .create-right {
+  flex: 1;
+  text-align: left;
+}

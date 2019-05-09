@@ -1,0 +1,115 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.5",
+	"appid": "wx496e9bad2411496f",
+	"projectname": "%E8%90%8C%E8%8A%BD%E4%B9%A0%E6%83%AF",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 11,
+			"list": [
+				{
+					"id": -1,
+					"name": "vip",
+					"pathName": "pages/vip/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "lock",
+					"pathName": "pages/unlock/index",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "隐私设置",
+					"pathName": "pages/private_setting/index",
+					"query": "reset=1"
+				},
+				{
+					"id": -1,
+					"name": "重置密码",
+					"pathName": "pages/private_reset/index",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "分享",
+					"pathName": "pages/share/index",
+					"query": "id=25644&page=1",
+					"scene": "1011"
+				},
+				{
+					"id": 5,
+					"name": "分享",
+					"pathName": "pages/createFt/create",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 6,
+					"name": "分享",
+					"pathName": "pages/energy/energy",
+					"query": "u=1&h=36&s=1"
+				},
+				{
+					"id": 7,
+					"name": "分享卡片",
+					"pathName": "pages/shareFt/share",
+					"query": "habitId=2782",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "习惯分享",
+					"pathName": "pages/mindFeed/feed",
+					"query": "id=5&share=1"
+				},
+				{
+					"id": 9,
+					"name": "直接进入圈子",
+					"pathName": "pages/checkFt/check",
+					"query": "scene=4255",
+					"scene": "1011"
+				},
+				{
+					"id": 10,
+					"name": "分享",
+					"pathName": "pages/feedback/send",
+					"query": "id=25644&page=1",
+					"scene": "1011"
+				},
+				{
+					"id": 11,
+					"name": "习惯详情",
+					"pathName": "pages/mindFeed/feed",
+					"query": "id=25&share=1&o=1",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}

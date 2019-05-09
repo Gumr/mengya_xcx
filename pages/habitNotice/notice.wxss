@@ -1,0 +1,36 @@
+/* pages/habitNotice/notice.wxss */
+
+.edit-warp {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+
+.info-warp {
+  font-size: 18rpx;
+  color: #666;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.info-warp > textarea {
+  width: 94%;
+  background-color: #fff;
+  font-size: 30rpx;
+  min-height: 200rpx;
+  color: #444;
+  padding: 20rpx;
+  border-radius: 6rpx;
+}
+
+.edit-ok {
+  border-radius: 8rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #29a1f7;
+  color: #fff;
+  font-size: 30rpx;
+}

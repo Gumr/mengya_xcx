@@ -1,0 +1,19 @@
+<!--pages/private_setting/index.wxml-->
+<view class="container">
+    <image src="../../images/lock.png"/>
+    <view class="desc">
+        <view class="title">{{title}}</view>
+        <view class="warning">{{warning}}</view>
+    </view>
+    <view class="password" wx:if="{{!showEmail}}">
+        <view class="underline">
+            <view wx:for="{{numbers}}" wx:key="{{index}}" class="{{current==index?'focus':''}}">{{item}}</view>
+        </view>
+        <input type="number" bindinput='handleInput' maxlength="4" focus="{{true}}" value="{{value}}" />
+        <button bindtap="handleResetPsw" wx:if="{{isRetPsw}}" disabled="{{!resetReady}}"  class="confirm">确定</button>
+    </view>
+    <view class="email" wx:else>
+        <input type="text" focus="{{true}}" value="{{email}}" bindinput="handleInputEmail"/>
+        <button bindtap="handleConfirm" disabled="{{!isValidEmail}}" class="confirm">确定</button>
+    </view>
+</view>

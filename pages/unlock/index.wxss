@@ -1,0 +1,81 @@
+/* pages/lock/index.wxss *//* pages/private_setting/index.wxss */
+page{
+    background-color: white;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+image{
+    margin-top: 50rpx;
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30rpx;
+}
+
+.desc .title{
+    font-size: 50rpx;
+    color: #333333;
+    font-weight: bolder;
+}
+.desc .warning{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 340rpx;
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    color: #999999;
+    line-height: 1.8;
+}
+
+.password{
+    position: relative;
+    width: 300rpx;
+    margin-top: 40rpx;
+    overflow: hidden;
+}
+.underline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.underline>view{
+    width: 50rpx;
+    height: 50rpx;
+    border-bottom: #999999 2px solid;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50rpx;
+}
+
+.underline .focus{
+    border-color: #29a1f7;
+}
+.password input{
+    position: absolute;
+    top: 0;
+    left: -750rpx;
+    height: 80rpx;
+    opacity: 0;
+    color: red;
+    font-size: 1rpx;
+    width: 1500rpx;
+
+}
+
+.forget{
+    margin-top: 10em;
+    font-size: 30rpx;
+    color: #444444;
+}

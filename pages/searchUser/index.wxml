@@ -1,0 +1,25 @@
+<view class='create-warp'>
+  <view class="header">
+    <image class="plus" src="../../images/search_icon.png" />
+    <input class="new-create" value="{{input}}" placeholder="输入昵称搜索小伙伴" 
+    bindinput="inputChangeHandle" bindconfirm="inputCompleteHandle" />
+  </view>
+
+  <view class='recommend-title' wx:if='{{recommendList.length > 0}}'>智能推荐</view>
+  <view class='recommend-warp' wx:if='{{recommendList.length > 0}}'>
+    <view class="scroll-view-item" wx:for="{{recommendList}}" wx:key="*this">
+      <view class="item-day">
+        <image class="item-icon" src="{{item.avatar_small}}" bindtap='toUserPage' data-userid='{{item.id}}'/>
+        <view class='item-habit' bindtap='toUserPage' data-userid='{{item.id}}'>
+          <view>{{item.nickname}}</view>
+          <view>{{item.signature}}</view>
+        </view>
+        <login-view bind:onLoginSuccess='clickRelation' data-index='{{index}}' data-userid='{{item.id}}' data-follow='{{item.isfollowed}}'>
+          <button class="join-btn">
+            <view>{{item.isfollowed==1?'取消关注':'关注'}}</view>
+          </button>
+        </login-view>
+      </view>
+    </view>
+  </view>
+</view>

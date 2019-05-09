@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "好友邀请",
+  "usingComponents": {
+    "login-view": "../../components/login_view"
+  }
+}

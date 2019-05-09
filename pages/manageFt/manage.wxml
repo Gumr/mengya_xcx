@@ -1,0 +1,63 @@
+<!--pages/manageFt/manage.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">今日统计</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">圈子规则</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">直达服务</view>
+</view>
+<block wx:if="{{currentTab==0}}">
+  <view class='ft-all'>
+    <text>总人数: {{ft_user}}</text>
+    <text>{{isLastDay? '昨天':'今天'}}已打卡: {{ft_check}}</text>
+    <text>未打卡: {{ft_user - ft_check}}</text>
+  </view>
+
+  <view class="fter-view-item" wx:for="{{userList}}" wx:key="id">
+    <view class="fter-item-ans">
+      <image src="{{item.avatar_small}}"></image>
+      <view class="fter-item-day">
+        <view>{{item.nickname}}</view>
+        <view>已坚持
+          <text style='color:#3dcc79'> {{item.days}} </text>天</view>
+      </view>
+      <view class='check-status'>{{isLastDay? '昨天':'今天'}}{{item.is_check==1? '已打卡':'未打卡'}}</view>
+
+      <button class='remind-remove' bindtap='romoveGrouper' data-user="{{item.user_id}}">移出</button>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{currentTab==1}}">
+  <view class='rule-set'>
+    <view class='desc-warp'>
+      <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+      <text class='create-desc'>你们专属的打卡圈子，其他成员邀请才能进入</text>
+    </view>
+    <view class='desc-warp'>
+      <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+      <text class='create-desc'>成员超过20人，圈主免费升级高级账户</text>
+    </view>
+    <view class='desc-warp'>
+      <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+      <text class='create-desc'>免费获得公众号直达圈子服务（你有公众号）</text>
+    </view>
+    <view class='desc-warp'>
+      <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+      <text class='create-desc'>免费定制圈子精美图标（联系客服）</text>
+    </view>
+    <view class='desc-warp'>
+      <image class='checked-icon' src='/images/ischeck_icon.png'></image>
+      <text class='create-desc'>设置是否允许7天补卡</text>
+      <switch class='repair-checked' checked='{{isRepair}}' bindchange="repairChange" color="#1f82d2" />
+    </view>
+  </view>
+
+</block>
+
+<block wx:if="{{currentTab==2}}">
+  <view class='direct-warp'>
+    <view bindtap='toCopyDirect'>直达路径：
+      <text>pages/checkFt/check?scene={{id}}</text>
+    </view>
+    <text class='direct-web' bindtap='toDirect'>公众号直达圈子服务</text>
+  </view>
+</block>

@@ -1,0 +1,332 @@
+/**mine.wxss**/
+.mine-warp{
+  width: 100%;
+  height: 100%;
+}
+.userinfo {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  height: 290rpx;
+}
+
+.avatar-warp {
+  position: relative;
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 70rpx;
+  margin-left: 50rpx;
+  margin-bottom: 70rpx;
+}
+
+.userinfo-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.userinfo-vip {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: -2rpx;
+  right: -2rpx;
+  border-radius: 50%;
+  border: 1rpx solid #eee;
+}
+
+.info-warp {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 38rpx;
+  margin-top: 90rpx;
+}
+
+.userinfo-nickname {
+  margin-bottom: 15rpx;
+  height: 35rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.userinfo-desc {
+  color: #666;
+  font-size: 24rpx;
+  padding-top: 5rpx;
+  padding-bottom: 15rpx;
+}
+
+.energy-warp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.energy-warp > text {
+  color: #00aa5d;
+  font-size: 33rpx;
+  padding-left: 12rpx;
+  padding-right: 25rpx;
+}
+
+.energy-icon {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.energy-why {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.userinfo-edit {
+  width: 44rpx;
+  height: 44rpx;
+  padding: 10rpx;
+  margin-top: 78rpx;
+  margin-right: 40rpx;
+  margin-left: 40rpx;
+}
+
+.message-warp{
+  width: 112rpx;
+  height: 62rpx;
+  border: 1rpx solid #ccc;
+  border-top-left-radius: 31rpx;
+  border-bottom-left-radius: 31rpx;
+  position: absolute;
+  text-align: center;
+  line-height: 62rpx;
+  color: #29a1f7;
+  font-size: 30rpx;
+  bottom: 15rpx;
+  right: -1rpx;
+}
+
+.message-warp .red-dot{
+  position: absolute;
+  right: 10rpx;
+  top: 8rpx;
+  background: #f43530;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 16rpx;
+}
+
+.login {
+  display: inline-block;
+  padding: 15rpx 60rpx;
+  color: #29a1f7;
+  font-size: 34rpx;
+  border: #29a1f7 1px solid;
+  border-radius: 15rpx;
+  text-align: center;
+  margin-top: 106rpx;
+  margin-left: 90rpx;
+  margin-right: auto;
+  align-items: center;
+}
+
+.profile-wrapper {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.profile, .account {
+  display: flex;
+  height: 96rpx;
+  line-height: 96rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.share-btn {
+  width: 100%;
+  height: 96rpx;
+  line-height: 96rpx;
+  padding-left: 0rpx;
+  padding-right: 0rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background: transparent;
+  border: none;
+}
+
+.share-btn::after {
+  border: none;
+  flex: 1;
+}
+
+.profile-item, .account-item {
+  flex: 1;
+  font-size: 30rpx;
+  color: #444;
+  text-align: left;
+  line-height: 98rpx;
+}
+
+.profile-arrow, .account-arrow {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.profile-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 25rpx;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 35%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 8rpx;
+}
+
+.modal-title {
+  padding-top: 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 30rpx 32rpx;
+  font-size: 27rpx;
+  line-height: 38rpx;
+  color: #444;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #f2f2f2;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-confirm {
+  width: 100%;
+  color: #29a1f7;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.energy-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #f2f2f2;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.btn-share {
+  flex: 1;
+  color: #29a1f7;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.energye-btn {
+  color: #29a1f7;
+  font-size: 32rpx;
+  background: transparent;
+  border: none;
+}
+
+.energye-btn::after {
+  border: none;
+}
+
+.recommend {
+  color: #999;
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 28rpx;
+}
+
+.recommend-wrapper {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.recommend-list {
+  display: flex;
+  flex-direction: row;
+  height: 116rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.recommend-icon {
+  height: 90rpx;
+  width: 90rpx;
+  margin: 15rpx;
+}
+
+.recommend-text {
+  flex: 1;
+  text-align: left;
+}
+
+.recommend-name {
+  color: #333;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.recommend-desc {
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 5rpx;
+}
+
+.recommend-btn {
+  height: 60rpx;
+  width: 120rpx;
+  line-height: 60rpx;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  background: #3dcc79;
+  border-radius: 10rpx;
+}

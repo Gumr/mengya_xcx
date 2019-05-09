@@ -1,0 +1,6 @@
+<!--pages/makeDayCard/card.wxml-->
+<canvas canvas-id="shareCanvas"  class="share-canvas"></canvas> 
+<view class='share-save-btn' bindtap='saveCard'>保存卡片</view>
+<view class='share-desc'>保存查看大图更清晰</view>
+<view class='share-desc'>保存到相册，可以相册查看和分享</view>
+<view class='rand-btn' bindtap='randCard'>随机卡片背景</view>

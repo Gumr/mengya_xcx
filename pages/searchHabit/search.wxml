@@ -1,0 +1,31 @@
+<view class='create-warp'>
+  <view class="header">
+    <image class="plus" src="../../images/plus.png" />
+    <input class="new-create" value="{{input}}" placeholder="输入你要自定义的习惯" bindinput="inputChangeHandle" bindconfirm="inputCompleteHandle" />
+  </view>
+
+  <view class='add-content' wx:if="{{result}}">
+    <view class="create-desc">习惯“{{result}}”{{isCreated ?'已创建':'尚未创建'}}</view>
+    <view class="create-btn" bindtap='createHabit'>{{isCreated ? '添加':'创建'}}</view>
+  </view>
+
+  <view class='recommend-title' wx:if='{{recommendList.length > 0}}'>智能推荐</view>
+  <view class='recommend-warp' wx:if='{{recommendList.length > 0}}'>
+    <view class="scroll-view-item" wx:for="{{recommendList}}" wx:key="id">
+      <view class="item-day">
+        <image class="item-icon" src="{{item.icon_url}}" bindtap='clickHabit' data-habitid='{{item.habit_id}}'/>
+        <view class='item-habit' bindtap='clickHabit' data-habitid='{{item.habit_id}}'>
+          <view>{{item.name}}</view>
+          <view>已有{{item.members}}位萌友在坚持</view>
+        </view>
+        <login-view bind:onLoginSuccess='clickJoin' payload="{{item.name}}" data-type='{{item.habit_type}}' data-habitid='{{item.habit_id}}'>
+          <form report-submit="true" bindsubmit="submitJoin" data-id='{{item.habit_id}}'>
+            <button class="join-btn" form-type="submit">
+              <view class='join-habit'>加入</view>
+            </button>
+          </form>
+        </login-view>
+      </view>
+    </view>
+  </view>
+</view>

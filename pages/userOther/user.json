@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "个人主页",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "login-view": "../../components/login_view"
+  }
+}

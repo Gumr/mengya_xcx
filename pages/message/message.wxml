@@ -1,0 +1,31 @@
+<!--pages/message/message.wxml-->
+<view class='page-warp' scroll-y="true" style="height: 100%;" wx:if='{{!isEmpty}}'>
+  <view wx:if='{{messageList.length > 0}}'>
+    <view class="scroll-view-item" wx:for="{{messageList}}" wx:key="id" wx:for-index="idx">
+      <view class="item-day">
+        <image class="item-icon" src="{{item.avatar_small}}" catchtap='toUserPage' data-user="{{item.sender_id}}" />
+        <view class='item-habit' catchtap='toDetail' data-id="{{item.key_id}}" data-index="{{idx}}">
+          <view wx:if='{{item.type==1}}'>
+            <text class='msg-user' catchtap='toUserPage' data-user="{{item.sender_id}}">{{item.nickname}}</text>
+            <text>评论了你</text>
+          </view>
+          <view wx:if='{{item.type==2}}'>
+            <text class='msg-user' catchtap='toUserPage' data-user="{{item.sender_id}}">{{item.nickname}}</text>
+            <text>点赞了你的记录</text>
+          </view>
+          <view wx:if='{{item.type==3}}'>
+            <text class='msg-user' catchtap='toUserPage' data-user="{{item.sender_id}}">{{item.nickname}}</text>
+            <text>将你移出了圈子</text></view>
+          <view class='msg-content'  wx:if='{{item.type!=2}}'>{{item.content}}</view>
+
+          <view class='msg-time'>{{item.msg_time}}</view>
+        </view>
+      </view>
+      <view class='red-dot' wx:if='{{item.has_read==0}}'></view>
+    </view>
+  </view>
+  <view class="loadmore">
+    <text>{{loadmore == -1? "到底了~":(loadmore == 1? "正在加载...":"上拉加载")}}</text>
+          </view>
+        </view>
+        <view wx:if='{{isEmpty}}' class='empty-warp'>暂无消息</view>

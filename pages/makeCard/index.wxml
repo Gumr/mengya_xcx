@@ -1,0 +1,7 @@
+<!--pages/makeCard/index.wxml-->
+<view class="canvas-warp" catchlongtap='saveCardShow'>
+  <canvas canvas-id="shareCanvas"  class="share-canvas" style='height:{{canvasHeight}}px'></canvas> 
+  <cover-view wx:if="{{page==1}}" class='back-home-btn' bindtap='backHome'>首页</cover-view>
+  <view class='bottom-warp'></view>
+</view>
+<cover-view class='save-btn' bindtap='saveCard'>保存今日卡片</cover-view>

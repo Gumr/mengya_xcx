@@ -1,0 +1,135 @@
+<!--mine.wxml-->
+<view class='mine-warp'>
+  <view class="userinfo" wx:if="{{isLogin}}">
+    <view class='avatar-warp' bindtap='editUser'>
+      <image class="userinfo-avatar" src="{{userInfo.avatar_small}}" background-size="cover"></image>
+      <image class="userinfo-vip" wx:if="{{userInfo.vip==1}}" src="/images/avatar_vip.png"></image>
+    </view>
+    <view class='info-warp'>
+      <text class="userinfo-nickname" bindtap='editUser'>{{userInfo.nickname}}</text>
+      <text class="userinfo-desc" bindtap='editUser'>{{userInfo.signature}}</text>
+      <view class='energy-warp'>
+        <image class="energy-icon" src="/images/energy_icon.png"></image>
+        <text>{{energy}}g</text>
+        <image class="energy-why" src="/images/energy_why.png" bindtap='energyDesc'></image>
+      </view>
+    </view>
+    <image class="userinfo-edit" src="/images/user_edit.png" bindtap='editUser'></image>
+    <view class='message-warp' catchtap='goMessage'>
+      <text>消息</text>
+      <view class='red-dot' wx:if='{{hasUnRead}}'></view>
+    </view>
+  </view>
+  <view class="userinfo" wx:else>
+    <login-view bind:onLoginSuccess='handleLoginSuccess'>
+      <view class='login'>快速登录</view>
+    </login-view>
+  </view>
+
+
+  <view class="profile-wrapper">
+    <login-view bind:onLoginSuccess='toUserPage'>
+      <view class="account">
+        <image class="profile-icon" src="/images/my_home.png"></image>
+        <view class="profile-item">我的主页</view>
+        <image class="profile-arrow" src="/images/arrow.png"></image>
+      </view>
+    </login-view>
+    <login-view bind:onLoginSuccess='toBuyVIP'>
+      <view class="account">
+        <image class="profile-icon" src="/images/my_vip.png"></image>
+        <view class="profile-item">高级账户功能</view>
+        <image class="profile-arrow" src="/images/arrow.png"></image>
+      </view>
+    </login-view>
+  </view>
+
+  <view class="profile-wrapper">
+    <view class="account" catchtap="toAbout">
+      <image class="profile-icon" src="/images/my_about.png"></image>
+      <view class="account-item">使用 & 攻略 & 文章</view>
+      <image class="account-arrow" src="/images/arrow.png"></image>
+    </view>
+    <view class="account" catchtap="toFeedback">
+      <image class="profile-icon" src="/images/my_service.png"></image>
+      <view class="account-item">反馈 & 客服</view>
+      <image class="account-arrow" src="/images/arrow.png"></image>
+    </view>
+   
+  </view>
+
+  <view class="profile-wrapper">
+    <view class="profile">
+      <image class="profile-icon" src="/images/my_direct.png"></image>
+      <view class="profile-item" catchtap="toRelation">公众号关联小程序</view>
+      <image class="profile-arrow" src="/images/arrow.png"></image>
+    </view>
+  </view>
+
+  <view class="profile-wrapper">
+    <view class="profile">
+      <button class='share-btn' open-type="share">
+        <image class="profile-icon" src="/images/my_recommand.png"></image>
+        <view class="profile-item">推荐「萌芽习惯」</view>
+        <image class="profile-arrow" src="/images/arrow.png"></image>
+      </button>
+    </view>
+  </view>
+  <view class='recommend' wx:if="{{recommend}}">推荐小程序</view>
+  <view class="recommend-wrapper" wx:if="{{recommend}}">
+    <view class="recommend-list" wx:for="{{recommend}}" wx:key="id" wx:for-item="item">
+      <image class="recommend-icon" src="{{item.icon}}"></image>
+      <view class='recommend-text'>
+        <view class="recommend-name">{{item.name}}</view>
+        <view class="recommend-desc">{{item.desc}}</view>
+      </view>
+      <view class='recommend-btn'>
+        <navigator target="miniProgram" open-type="navigate" app-id="{{item.appid}}" path="{{item.path}}" extra-data="{{item.extra}}" version="release">去看看</navigator>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">我们关联一起吧</view>
+  <view class="modal-content">
+    <text>你的微信公众号需要与萌芽习惯小程序关联在一起吗？
+  关联步骤：
+  1、登陆微信公众号
+  2、小程序管理->添加
+  3、关联小程序
+  4、输入萌芽习惯小程序信息
+  AppID： wx496e9bad2411496f
+  5、发送关联邀请，发送邀请后，萌芽习惯会尽快操作关联成功。
+  6、本关联是自愿原则，无金钱来往
+  </text>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">复制APPID</view>
+  </view>
+</view>
+
+<view class="modal-mask" bindtap="hideEnergy" catchtouchmove="preventTouchMove" wx:if="{{showEnergy}}"></view>
+<view class="modal-dialog" wx:if="{{showEnergy}}">
+  <view class="modal-title">萌芽能量</view>
+  <view class="modal-content">
+    <text>每天坚持，能量会一点一滴收集起来。
+  能量收集：
+          打卡+1g
+          记录+1g
+          购买高级账户+180g
+          习惯能量树，好友可以赠送能量
+          打卡不断积累哦
+  能量使用：
+           <text style='color:red'>免费升级高级账号（达到180g）
+          补打卡-5g</text>
+    </text>
+  </view>
+  <view class="energy-footer">
+    <view class="btn-cancel" bindtap="hideEnergy">确定</view>
+    <view class="btn-share">
+      <button class='energye-btn' open-type="share">分享给好友</button>
+    </view>
+  </view>
+</view>

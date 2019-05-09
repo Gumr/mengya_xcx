@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "创建打卡圈子",
+  "usingComponents": {
+    "login-view": "../../components/login_view"
+  }
+}

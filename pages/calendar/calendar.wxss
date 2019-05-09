@@ -1,0 +1,245 @@
+/* pages/calendar/calendar.wxss */
+.calendar-bg {
+  height: 59%;
+  background: #fff;
+  overflow: hidden;
+  padding-top: 20rpx;
+}
+.top-handle {
+    height: 100rpx;
+}
+.prev {
+    text-align: right;
+    height: 80rpx;
+}
+.next {
+    height: 80rpx;
+}
+.prev-handle {
+    width: 80rpx;
+    height: 100%;
+}
+.next-handle {
+    width: 80rpx;
+    height: 100%;
+}
+.date-area {
+    width: 40%;
+    height: 80rpx;
+    text-align: center;
+}
+.weeks {
+    height: 66rpx;
+    line-height: 50rpx;
+    opacity: 0.5;
+    font-size: 30rpx;
+}
+.week {
+    text-align: center;
+    width: 107.7528571429rpx;
+}
+.days {
+    height: 500rpx;
+}
+.grid {
+    width: 107.7528571429rpx;
+}
+.day {
+    width: 50rpx;
+    height: 50rpx;
+    color: #666;
+    font-size: 30rpx;
+    font-weight: 200;
+}
+.border-radius {
+    border-radius: 50%;
+    position: relative;
+    left: 0;
+    top: 0;
+    color: #fff;
+}
+.pink-bg {
+    background-color: #29a1f7;
+}
+.purple-bg {
+    background-color: #b8b8f1;
+}
+
+.right-triangle::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 15rpx solid transparent;
+    border-left-color: #ff629a;
+    position: absolute;
+    right: -22rpx;
+    top: 18rpx;
+}
+.left-triangle::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 15rpx solid transparent;
+    border-right-color: #ff629a;
+    position: absolute;
+    left: -22rpx;
+    top: 18rpx;
+}
+.tips {
+    text-align: center;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+.types {
+    background-color: #ffedf4;
+    height: 50rpx;
+}
+.type-dot {
+    width: 25rpx;
+    height: 25rpx;
+    border-radius: 50%;
+    margin-right: 10rpx;
+}
+.type-dot-ymq {
+    color:#FF7CA0;
+    background-color: #FF7CA0;
+}
+.type-dot-ycq {
+    color: rgb(255, 200, 202);
+    background-color: rgb(255, 200, 202);
+}
+.type-dot-aqq {
+    color: rgb(118, 191, 92);
+    background-color: rgb(118, 191, 92);
+}
+.type-dot-yyq {
+    color: #FF7CA0;
+    background-color: #FF7CA0;
+}
+.type-dot-plr {
+    color: rgb(211, 189, 215);
+    background-color: rgb(211, 189, 215);
+}
+.types-desc {
+    padding: 0 20rpx;
+}
+.type-name {
+    margin-top: 50rpx;
+    margin-bottom: 30rpx;
+}
+.type-desc {
+    padding: 0 35rpx;
+    line-height: 38rpx;
+}
+.explain {
+    border-top: 1px solid #eee;
+    width: 90%;
+    margin: 20rpx 5% 20rpx 5%;
+    padding: 20rpx 0;
+}
+.explain-title {
+    font-weight: bold;
+    margin-bottom: 15rpx;
+}
+.explain-item {
+    padding: 8rpx 20rpx;
+    color: #fff;
+}
+.left-border-radius {
+    border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+}
+.right-border-radius {
+    border-top-right-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+}
+
+.statistics-title{
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 30rpx;
+  color: #666;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+
+.statistics-item{
+  display: flex;
+  height: 96rpx;
+  line-height: 96rpx;
+  width: 100%;
+  background: #fff;
+  flex-direction: row;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.statistics-item .s-dot0{
+  width: 14rpx;
+  height: 14rpx;
+  margin-top: 41rpx;
+  margin-left: 30rpx;
+  margin-right: 25rpx;
+  border-radius: 50%;
+  background: #3dcc79;
+}
+
+
+.statistics-item .s-dot1{
+  width: 14rpx;
+  height: 14rpx;
+  margin-top: 41rpx;
+  margin-left: 30rpx;
+  margin-right: 25rpx;
+  border-radius: 50%;
+  background: #29a1f7;
+}
+
+.statistics-item .s-dot2{
+  width: 14rpx;
+  height: 14rpx;
+  margin-top: 41rpx;
+  margin-left: 30rpx;
+  margin-right: 25rpx;
+  border-radius: 50%;
+  background: #fbc955;
+}
+
+.statistics-item .s-desc{
+  flex: 1;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.statistics-item .s-count0{
+  color: #3dcc79;
+  font-size: 32rpx;
+}
+
+.statistics-item .s-count1{
+  color: #29a1f7;
+  font-size: 32rpx;
+}
+
+.statistics-item .s-count2{
+  color: #fbc955;
+  font-size: 32rpx;
+}
+
+.statistics-item .s-day{
+  padding-right: 30rpx;
+  padding-left: 15rpx;
+   font-size: 28rpx;
+  color: #666;
+}
+
+.chart-container{
+   width: 400rpx;
+  height: 400rpx;
+}
+
+ec-canvas {
+  width: 200rpx;
+  height: 200rpx;
+}

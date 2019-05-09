@@ -1,0 +1,161 @@
+/* pages/createFt/create.wxss */
+
+.create-warp {
+  padding-bottom: 30rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.create-title {
+  padding-top: 45rpx;
+  color: #666;
+  font-weight: bold;
+  font-size: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.new-create {
+  width: auto;
+  background: #fff;
+  align-items: center;
+  border-radius: 8rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.new-rule{
+  width: auto;
+  background: #fff;
+  align-items: center;
+  border-radius: 8rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  color: #666;
+  font-size: 28rpx;
+  height: 140rpx;
+}
+
+.create-desc {
+  padding-left: 6rpx;
+  color: #666;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+
+.desc-warp{
+  margin-top: 5rpx;
+  padding-left: 3rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.checked-icon{
+  margin-top: 5rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/*  重写 radio 样式  */
+
+/* 未选中的 背景样式 */
+
+radio .wx-radio-input {
+  border-radius: 50%; /* 圆角 */
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked {
+  border: #1f82d2;
+  border-radius: 50%; /* 圆角 */
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 28rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 28rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 28rpx; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.create-btn {
+  margin-top: 72rpx;
+  width: 60%;
+  background: #1f82d2;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+
+.back-home-btn {
+  position: fixed;
+  width: 110rpx;
+  bottom: 40rpx;
+  left: 0rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #fbc955;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  font-size: 26rpx;
+  color: #fff;
+  z-index: 100;
+}
+
+.direct-web{
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  color: #29a1f7;
+  position: fixed;
+  bottom: 20rpx;
+}
+
+.welfare{
+  width: 550rpx;
+  margin-top: 78rpx;
+  margin-left: 80rpx;
+}
+
+.repair-checked{
+  margin-left: 60rpx;
+}
+
+.wx-switch-input {
+  width: 80rpx !important;
+  height: 40rpx !important;
+}
+
+.wx-switch-input::before {
+  width: 80rpx !important;
+  height: 40rpx !important;
+}
+
+.wx-switch-input::after {
+  width: 36rpx !important;
+  height: 36rpx !important;
+}

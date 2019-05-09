@@ -1,0 +1,47 @@
+<!--pages/vip/index.wxml-->
+<view class='vip'>
+  <view class="desc">亲爱的萌友，您愿意用一份下午茶的钱来帮助萌芽习惯的持续优化么？萌芽的成长需要大家的共同力量，期待与您一起进步！
+  </view>
+  <view class="priority">
+    <view class="title">开通高级账户，您将永久获得以下特权</view>
+    <view class="items">
+      <view class="item">
+        <image src="../../images/vip_cloud.png" />
+        <view>
+          <view class="sub-title">安全的云端存储</view>
+          <view>终于不用担心手机又丢，数据又丢！</view>
+        </view>
+      </view>
+      <view class="item">
+        <image src="../../images/vip_habits.png" />
+        <view>
+          <view class="sub-title">无限制习惯个数</view>
+          <view>解除限制，很爽有木有！！！</view>
+        </view>
+      </view>
+      <view class="item">
+        <image src="../../images/vip_private.png" class="private-img" />
+        <view>
+          <view class="sub-title">启用隐私保护</view>
+          <view>一键保护，老天都不知道你的小隐私！</view>
+
+        </view>
+      </view>
+      <view class="item">
+        <image src="../../images/vip_features.png" />
+        <view>
+          <view class="sub-title">海量新功能</view>
+          <view>炒鸡棒的新特性持续更新，免费获取哦</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="payment">
+    <view wx:if="{{isVIP}}" class='is-vip'>您已开通高级账号</view>
+    <view wx:else>
+      <button wx:if="{{isIos && energy<180 && groupCount==0}}" bindtap="handleOpenMethod">查看升级攻略</button>
+      <button bindtap="handleOpenVIP" wx:elif="{{energy<180 && groupCount==0}}">￥{{fee}}元开通高级账号</button>
+      <button bindtap="handleFreeVIP" wx:else>免费开通高级账号<text style='font-size:26rpx;'>{{groupCount>0? '(圈子超过20成员)':'(能量超过180g)'}}</text></button>
+    </view>
+  </view>
+</view>

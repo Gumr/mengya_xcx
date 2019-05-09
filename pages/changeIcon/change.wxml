@@ -1,0 +1,32 @@
+<!--pages/changeIcon/change.wxml-->
+<view class='content-warp'>
+  <view class='habit-header' wx:if="{{habitId != 0}}">
+    <image class="habit-icon" src="{{currentIcon==''? habitData.icon_url:currentIcon}}"></image>
+    <view class='habit-note'>
+      <view>{{habitName}}</view>
+      <view class='habit-members'>已坚持{{insistDay}}天</view>
+    </view>
+    <button class='habit-change-btn' bindtap='onChange'>确定修改</button>
+  </view>
+  <view wx:else class='change-tip'>操作指引: 习惯列表左滑=>管理=>修改习惯图标</view>
+
+  <scroll-view  class="list-scroll" scroll-y bindscrolltolower="onLoadMore">
+    <view class='icon-list-warp'>
+      <view class="icon-view" wx:for="{{iconList}}" wx:key='index' bindtap='onSelectIcon' data-icon="{{item.url}}">
+        <image src="{{item.url}}"></image>
+      </view>
+      <view class='more-warp'>
+          <view class='icon-more' bindtap='onLoadMore'>{{loading? '加载中...':loadMoreText}}</view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>
+<view class='connect-btn' bindtap='toFeedback'>联系客服定制图标</view>
+
+<view class='option-warp'>
+  <button class='record-card-btn' open-type="share">
+    <view>分享</view>
+    <image class="share-icon" src="/images/bottom_share.png"></image>
+  </button>
+</view>
